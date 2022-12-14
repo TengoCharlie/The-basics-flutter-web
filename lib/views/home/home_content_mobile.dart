@@ -7,14 +7,16 @@ class HomeContentMobile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      mainAxisSize: MainAxisSize.max,
-      children: const [
-        CourseDetails(),
-        SizedBox(height: 100),
-        CallToAction("Join Course")
-      ],
-    );
+    return Builder(builder: (context) {
+      return Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisSize: MainAxisSize.max,
+        children: const [
+          CourseDetails(),
+          SizedBox(height: 100),
+          CallToAction("Join Course")
+        ],
+      );
+    });
   }
 }
