@@ -3,7 +3,8 @@ import 'package:responsive_builder/responsive_builder.dart';
 import 'package:the_basics/views/home/home_content_desktop.dart';
 import 'package:the_basics/views/home/home_content_mobile.dart';
 import 'package:the_basics/widget/centered_view/centered_view.dart';
-import 'package:the_basics/widget/nav_drawer/navigation_drawer.dart';
+import 'package:the_basics/widget/nav_drawer/navigation_drawer.dart'
+    as navDrawer;
 import 'package:the_basics/widget/navigation_bar/navigation_bar.dart';
 
 class HomeView extends StatelessWidget {
@@ -14,7 +15,7 @@ class HomeView extends StatelessWidget {
     return ResponsiveBuilder(
       builder: (context, sizingInformation) => Scaffold(
         drawer: sizingInformation.deviceScreenType == DeviceScreenType.mobile
-            ? const NavigationDrawer()
+            ? const navDrawer.NavigationDrawer()
             : null,
         backgroundColor: Colors.white,
         body: SingleChildScrollView(
