@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 
 class CourseDetails extends StatelessWidget {
   const CourseDetails({super.key});
@@ -6,31 +7,46 @@ class CourseDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // ignore: sized_box_for_whitespace
-    return Container(
-      width: 600,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.center,
-        // ignore: prefer_const_literals_to_create_immutables
-        children: [
-          const Text(
-            'FLUTTER WEB.\nTHE Basics',
-            style: TextStyle(
-              fontWeight: FontWeight.w800,
-              height: 0.9,
-              fontSize: 80,
+    return ResponsiveBuilder(builder: (context, sizingInformation) {
+      var textAlignment =
+          sizingInformation.deviceScreenType == DeviceScreenType.desktop
+              ? TextAlign.left
+              : TextAlign.center;
+      double titleSize =
+          sizingInformation.deviceScreenType == DeviceScreenType.mobile
+              ? 50
+              : 80;
+      double descriptionSize =
+          sizingInformation.deviceScreenType == DeviceScreenType.mobile
+              ? 16
+              : 21;
+      // ignore: sized_box_for_whitespace
+      return Container(
+        width: 600,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
+          // ignore: prefer_const_literals_to_create_immutables
+          children: [
+            Text(
+              'FLUTTER WEB.\nTHE Basics',
+              style: TextStyle(
+                  fontWeight: FontWeight.w800,
+                  height: 0.9,
+                  fontSize: titleSize),
+              textAlign: textAlignment,
             ),
-          ),
-          const SizedBox(height: 30),
-          const Text(
-            'In this course we will go over the basics of using Flutter Web for website development. Topics will include Responsive Layout, Deploying, Font Changes, Hover Functionality, Modals and more.',
-            style: TextStyle(
-              fontSize: 21,
-              height: 1.7,
+            const SizedBox(height: 30),
+            Text(
+              'In this course we will go over the basics of using Flutter Web for website development. Topics will include Responsive Layout, Deploying, Font Changes, Hover Functionality, Modals and more.',
+              style: TextStyle(
+                fontSize: descriptionSize,
+                height: 1.7,
+              ),
             ),
-          ),
-        ],
-      ),
-    );
+          ],
+        ),
+      );
+    });
   }
 }
