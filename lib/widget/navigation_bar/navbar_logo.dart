@@ -15,7 +15,7 @@ class NavBarLogo extends StatelessWidget {
         onTap: () {
           locator<NavigationService>().navigateTo(HomeRoute);
         },
-        child: Image.asset('logo.png'),
+        child: Image.asset('assets/logo.png'),
       ),
     );
   }
