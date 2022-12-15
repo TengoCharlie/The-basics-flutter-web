@@ -38,7 +38,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   responsive_builder: ^0.4.3
   get_it: ^7.2.0
-  seo_renderer: ^1.0.0
+  seo_renderer: ^0.6.0
 
 dev_dependencies:
   flutter_test:

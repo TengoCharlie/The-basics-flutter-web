@@ -14,10 +14,10 @@ class NavigationDrawer extends StatelessWidget {
           color: Colors.white,
           boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 16)]),
       child: Column(
-        children: [
+        children: const <Widget>[
           NavigationDrawerHeader(),
-          const DrawerItem('Episodes', Icons.videocam, EpisodesRoute),
-          const DrawerItem('About', Icons.help, AboutRoute),
+          DrawerItem('Episodes', Icons.videocam, EpisodesRoute),
+          DrawerItem('About', Icons.help, AboutRoute),
         ],
       ),
     );
