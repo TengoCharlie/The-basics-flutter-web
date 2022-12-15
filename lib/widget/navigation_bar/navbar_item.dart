@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:the_basics/locator.dart';
-import 'package:the_basics/services/navigation_Service.dart';
+import 'package:the_basics/services/navigation_service.dart';
 
 class NavbarItem extends StatelessWidget {
   final String title;

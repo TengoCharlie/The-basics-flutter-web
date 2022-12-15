@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:the_basics/locator.dart';
 import 'package:the_basics/routing/route_names.dart';
-import 'package:the_basics/services/navigation_Service.dart';
+import 'package:the_basics/services/navigation_service.dart';
 
 class NavBarLogo extends StatelessWidget {
   const NavBarLogo({super.key});

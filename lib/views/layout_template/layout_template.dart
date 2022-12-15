@@ -3,7 +3,7 @@ import 'package:responsive_builder/responsive_builder.dart';
 import 'package:the_basics/locator.dart';
 import 'package:the_basics/routing/route_names.dart';
 import 'package:the_basics/routing/router.dart';
-import 'package:the_basics/services/navigation_Service.dart';
+import 'package:the_basics/services/navigation_service.dart';
 
 import 'package:the_basics/widget/centered_view/centered_view.dart';
 import 'package:the_basics/widget/nav_drawer/navigation_drawer.dart'
