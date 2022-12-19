@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:provider_architecture/provider_architecture.dart';
 import 'package:the_basics/datamodels/navbar_item_model.dart';
 
-class NavBarItemTabletDesktop extends StatelessWidget {
-  final NavBarItemModel model;
-  const NavBarItemTabletDesktop({super.key, required this.model});
-
+class NavBarItemTabletDesktop extends ProviderWidget<NavBarItemModel> {
   @override
-  Widget build(
-    BuildContext context,
-  ) {
+  Widget build(BuildContext context, NavBarItemModel model) {
     return Text(
       model.title!,
       style: const TextStyle(fontSize: 18),
