@@ -39,6 +39,7 @@ dependencies:
   responsive_builder: ^0.4.3
   get_it: ^7.2.0
   seo_renderer: ^0.6.0
+  # need to convert this provider_archtecture into stacked
   provider_architecture: ^1.1.1+1
   provider: ^4.3.3
   http: ^0.13.5
