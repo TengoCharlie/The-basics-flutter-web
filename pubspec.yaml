@@ -39,6 +39,9 @@ dependencies:
   responsive_builder: ^0.4.3
   get_it: ^7.2.0
   seo_renderer: ^0.6.0
+  provider: ^6.0.5
+  http: ^0.13.5
+  stacked: ^3.0.1
 
 dev_dependencies:
   flutter_test:
