@@ -16,4 +16,7 @@ jobs:
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_BASIC123123123123123123 }}'
           projectId: basic123123123123123123
           channelId: 'preview-dev'
-      - run: echo "{name}={value}" >> $GITHUB_OUTPUT
+    outputs:
+      urls: ${{steps.firebase_hosting_preview.outputs.url}}
+      expire_time: ${{steps.firebase_hosting_preview.outputs.expire_time}}
+      details_url: ${{steps.firebase_hosting_preview.outputs.details_url}}
