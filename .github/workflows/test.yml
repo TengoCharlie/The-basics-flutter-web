@@ -1,0 +1,27 @@
+name: My Workflow
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set output
+        run: |
+          echo "::set-output name=output-name::output value"
+      - name: Create or update README
+        uses: peter-evans/create-or-update-readme@v2
+        with:
+          markdown: |
+            # My Workflow
+            
+            ## Outputs
+            
+            - output-name: `${{ steps.set-output.outputs.output-name }}`
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+outputs:
+  output-name:
+    description: The output value
+    required: false
