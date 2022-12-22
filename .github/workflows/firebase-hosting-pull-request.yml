@@ -17,5 +17,5 @@ jobs:
           projectId: basic123123123123123123
           channelId: 'preview-dev'
 
-      - run: echo '### ${{ steps.build_and_preview }} ' 
+      - run: echo '### ${{ steps.outputs.urls }} ' 
       # >> $GITHUB_STEP_SUMMARY
