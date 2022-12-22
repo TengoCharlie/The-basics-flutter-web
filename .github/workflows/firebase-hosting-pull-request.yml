@@ -10,6 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: sudo snap install flutter --classic && flutter channel master && flutter config --enable-web && flutter build web
+        id: firebase_hosting_preview
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
@@ -17,5 +18,5 @@ jobs:
           projectId: basic123123123123123123
           channelId: 'preview-dev'
 
-      - run: echo '### ${{ steps.outputs.urls }} ' 
+      - run: echo '### ${{ steps.firebase_hosting_preview.outputs.urls }} ' 
       # >> $GITHUB_STEP_SUMMARY
