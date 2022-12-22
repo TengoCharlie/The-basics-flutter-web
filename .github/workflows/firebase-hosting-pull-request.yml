@@ -16,7 +16,6 @@ jobs:
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_BASIC123123123123123123 }}'
           projectId: basic123123123123123123
           channelId: 'preview-dev'
-    outputs:
-      urls: ${{steps.outputs}}
-      expire_time: ${{steps.outputs}}
-      details_url: ${{steps.outputs}}
+      
+      - name: Adding Markdown
+        run: echo '### Hello world! ' >> $GITHUB_STEP_SUMMARY
