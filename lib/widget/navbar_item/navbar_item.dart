@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:the_basics/datamodels/navbar_item_model.dart';
+import 'package:the_basics/extensions/hover_extensions.dart';
 import 'package:the_basics/locator.dart';
 import 'package:the_basics/services/navigation_service.dart';
 import 'package:the_basics/widget/navbar_item/navbar_item_desktop.dart';
@@ -31,7 +32,7 @@ class NavbarItem extends StatelessWidget {
         child: ScreenTypeLayout(
           tablet: NavBarItemTabletDesktop(),
           mobile: NavBarItemMobile(),
-        ),
+        ).showCursorOnHover.moveUpOnHover,
       ),
     );
   }
