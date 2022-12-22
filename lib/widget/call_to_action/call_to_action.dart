@@ -13,6 +13,7 @@ class CallToAction extends StatelessWidget {
     return ScreenTypeLayout(
             tablet: CallToActionTabletDesktop(title),
             mobile: CallToActionMobile(title))
-        .showCursorOnHover;
+        .showCursorOnHover
+        .moveUpOnHover;
   }
 }

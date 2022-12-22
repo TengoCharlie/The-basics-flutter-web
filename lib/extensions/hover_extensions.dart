@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'dart:html' as html;
 
+import 'package:the_basics/extensions/translate_on_hover.dart';
+
 extension HoverExtensions on Widget {
   static final appContainer = html.window.document.querySelector('body');
   static final appContainer2 =
@@ -17,5 +19,11 @@ extension HoverExtensions on Widget {
           appContainer?.style.cursor = 'default';
           appContainer2?.style.cursor = 'default';
         });
+  }
+
+  Widget get moveUpOnHover {
+    return TranslateOnHover(
+      child: this,
+    );
   }
 }
