@@ -7,7 +7,6 @@ class NavigationService {
     return navigatorKey.currentState!.pushNamed(routeName);
   }
 
-  goBack() {
-    navigatorKey.currentState!.pop();
-  }
+  // ignore: prefer_typing_uninitialized_variables
+  get goBack => navigatorKey.currentState!.pop();
 }
