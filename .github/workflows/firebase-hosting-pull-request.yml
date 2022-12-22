@@ -16,4 +16,4 @@ jobs:
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_BASIC123123123123123123 }}'
           projectId: basic123123123123123123
           channelId: 'preview-dev'
-      - run: SUMMARY=$'# Testing Job Summary\n## Second Level Heading\nHello GitHub' echo "$SUMMARY" >> $GITHUB_STEP_SUMMARY
+      - run: SUMMARY=$'# Testing Job Summary\n## Second Level Heading\nHello GitHub' echo "$SUMMARY" >> $GITHUB_JOB_SUMMARY
