@@ -16,5 +16,6 @@ jobs:
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_BASIC123123123123123123 }}'
           projectId: basic123123123123123123
           channelId: 'preview-dev'
-      - run: echo '### ${{ steps }} ' 
+
+      - run: echo '### ${{ steps.build_preview }} ' 
       # >> $GITHUB_STEP_SUMMARY
