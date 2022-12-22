@@ -18,22 +18,17 @@ jobs:
           channelId: 'preview-dev'
   
   preview:
+    name: Preview Deployment
     if: ${{ github.event_name == 'workflow_dispatch'}}
-    needs: [build_and_preview]
+    needs: build_and_preview
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Deploy to Firebase Hosting preview channel
         id: firebase_hosting_preview
         uses: FirebaseExtended/action-hosting-deploy@v0
-        with:
-          repoToken: "${{ secrets.GITHUB_TOKEN }}"
-          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT }}"
-          expires: 14d
-          projectId: action-hosting-deploy-demo
-          entryPoint: "./demo"
       - name: Check outputs
         run: |
-          echo urls ${{steps.firebase_hosting_preview.outputs.url}}
-          echo expire_time ${{steps.firebase_hosting_preview.outputs.expire_time}}
-          echo details_url ${{steps.firebase_hosting_preview.outputs.details_url}}
+          echo urls ${{needs.build_and_preview.outputs}}
+          echo expire_time ${{needs.build_and_preview.outputs}
+          echo details_url ${{needs.build_and_preview.outputs}}
