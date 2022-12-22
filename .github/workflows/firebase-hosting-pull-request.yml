@@ -19,12 +19,13 @@ jobs:
   
   preview:
     if: ${{ github.event_name == 'workflow_dispatch'}}
+    needs: [build_and_preview]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Deploy to Firebase Hosting preview channel
         id: firebase_hosting_preview
-        uses: ./
+        uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT }}"
