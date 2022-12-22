@@ -17,11 +17,6 @@ jobs:
             
             ## Outputs
             
-            - output-name: `${{ steps.set-output.outputs.output-name }}`
+            - output-name: `My Sef`
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-outputs:
-  output-name:
-    description: The output value
-    required: false
